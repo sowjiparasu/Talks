@@ -46,7 +46,6 @@ namespace StackOverflowClone.Controllers
             viewModel.User = new UserViewModel(User) {Id = User.Identity.Name, Name = User.Identity.Name};
             viewModel.Question = q;
             viewModel.Users = users;
-            viewModel.RelatedQuestions = RavenSession.Advanced.MoreLikeThis<Question>("QuestionsIndex", q.Id);
             return View(viewModel);
         }
 
